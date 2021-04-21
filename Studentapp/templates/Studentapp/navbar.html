@@ -1,0 +1,42 @@
+<!--
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+  
+
+  
+         <h2>Student Information System</h2>
+        
+  <ul class="nav navbar-nav">
+    
+      <a class="p-2 text-muted" href="{% url 'home' %}">Home</a><br><br>
+      <a class="p-2 text-muted" href="{% url 'about' %}">About Project</a>
+      <a class="p-2 text-muted" href="{% url 'contact' %}">Contact</a>
+      <a class="p-2 text-muted" href="{% url 'login' %}">Admin Login</a>
+     <a class="p-2 text-muted" href="{% url 'dash' %}">Dash Board</a>
+     </ul>
+  </div>
+</nav>
+     
+    </nav>
+
+  </div>
+  </nav>
+ 
+-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Student Information System</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{% url 'home' %}">Home</a></li>
+      <li><a href="{% url 'about' %}">About Page</a></li>
+      <li><a href="{% url 'contact' %}">Contact Page </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>

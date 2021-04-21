@@ -1,0 +1,21 @@
+{% extends 'Studentapp/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+{% block 'content' %}
+<body >
+	<h1><u>Studen Information System</u></h1>
+	<h2>Add New Student</h2>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" name="submit">
+
+	</form>
+
+</body>
+
+</html>
+{% endblock %}

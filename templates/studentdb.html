@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My blog</title>
+</head>
+<body bgcolor="lightblue">
+<!--
+{% for  i  in  blogdb %}
+<h1 style="color:red;">{{ i.title }}</h1>
+<pre>{{i.created_date}} By {{ i.author}}</pre>
+<p >{{i.text}}</p>
+<hr>
+{% endfor %}
+!-->
+<body>
+
+<center>
+    <table border="2" bgcolor="lightblue">
+    
+
+<tr>
+<th>StudentName</th>
+<th>Email</th>
+<th>Phone</th>
+<th>Course</th>
+<th>Action</th>
+</tr>
+{% for  i  in  student %}
+<tr>
+    <td>{{ i.name }}</td>
+   <td>{{ i.email }}</td>
+    <td>{{ i.phno }}</td>
+    <td>{{ i.course }}</td>
+   
+
+</tr>
+{% endfor %}
+</table>
+</center>
+
+</body>
+</html>

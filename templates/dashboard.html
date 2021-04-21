@@ -1,0 +1,40 @@
+{% extends 'Studentapp/base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+{% block 'content' %}
+<body>
+
+<div class="container">
+	<h3>Student Record Management Dashboard</h3>
+<nav class="navbar navbar-dark bg-dark">
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary"><a href="/Studentapp/add/">Add Student</a></button>
+</div><br><br>
+</nav>
+<nav class="navbar navbar-dark bg-dark">
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary"><a href="/Studentapp/studentdb/">Student Details</a></button>
+</div><br><br>
+</nav>
+<nav class="navbar navbar-dark bg-dark">
+
+</div><br><br></nav>
+
+<nav class="navbar navbar-dark bg-dark">
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary"><a href="/Studentapp/home/">Logout</a></button>
+
+</div>
+</div>
+
+
+</div>
+</nav><br><br>
+</body>
+</html>
+{% endblock %}
