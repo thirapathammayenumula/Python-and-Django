@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Image Upload</title>
+	 <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">      
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+ <style>
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+    width: 70%;
+    margin: auto;
+  }
+ </style>	  
+ <script>
+    $(document).ready(function()
+	{
+	   debugger;
+	   $('#bt1').click(function()
+	   {
+	    debugger;
+      alert('btn clicked!!!!!!')
+      var imgs1 = $('#ii1').attr('src');
+      var imgs2 = $('#ii2').attr('src');
+      var imgs3 = $('#ii3').attr('src');
+      download(imgs1);
+      download(imgs2);
+      download(imgs3);
+    });                              
+   });
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-light " id="nav1">
+	      <a class="navbar-brand"  href="" id="text1" style="font-size:30px;"><b>Uploaded Images Display</b></a>
+	</nav>
+<div class="container">
+	<div class="row">
+		<div class ="col-xs-12">
+  <br>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+	  <li data-target="#myCarousel" data-slide-to="4"></li>
+	  <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+
+   
+<div class="carousel-inner" role="listbox">
+    <div class="item active">
+        <div class="row" id="img11">
+      		<div class="col-xs-4">
+      			 {% for i in r|slice:"1" %}
+				 
+				 {% if forloop.first %}
+      			<img src="{{i.images.url }}" alt="Chania" width="460" height="345" id="ii1">
+
+            <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+				{% endif %}
+      			{% endfor %}
+			</div>
+        <div class="col-xs-4 ">
+        	{% for i in r|slice:"1:2" %}
+				 {% if forloop.first %}
+        	<img src="{{ i.images.url }}" alt="Chania" width="460" height="345" id="ii2">
+          <!--  <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+        	{% endif %}
+			{% endfor %}
+        </div>
+        <div class="col-xs-4">
+      	{% for i in r|slice:"2:3" %}
+				 {% if forloop.first %}
+        <img src="{{ i.images.url  }}" alt="Chania" width="460" height="345" id="ii3">
+         <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+        {% endif %}
+		{% endfor %}
+		</div>
+		<!-- <a href="{{ i.images.url }}" download></a> -->
+            <button type="button" class="btn btn-primary btn-lg" id="bt1" style="float:right;" > Download</button>
+      </div>
+	  
+	
+</div>
+<div class="item">
+      	<div class="row">
+      		<div class="col-xs-4">
+      			{% for i in r|slice:"3:4" %}
+				 {% if forloop.first %}
+      			<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+             <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+      			{% endif %}
+				{% endfor %}
+        </div>
+        <div class="col-xs-4 ">
+        	{% for i in r|slice:"4:5" %}
+				 {% if forloop.first %}
+        	<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+           <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+        	{% endif %}
+			{% endfor %}
+        </div>
+        <div class="col-xs-4">
+		{% for i in r|slice:"5:6" %}
+		{% if forloop.first %}
+        <img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+         <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+        {% endif %}
+		{% endfor %}
+    </div>
+	 
+    </div>
+	 <button type="button" class="btn btn-primary btn-lg" id="bt2" style="float:right;" > Download</button>
+
+</div>
+<div class="item">
+      	<div class="row">
+      		<div class="col-xs-4">
+      			{% for i in r|slice:"6:7" %}
+				 {% if forloop.first %}
+      			<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+             <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+      			{% endif %}
+				{% endfor %}
+        </div>
+        <div class="col-xs-4 ">
+        	{% for i in r|slice:"7:8" %}
+				 {% if forloop.first %}
+        	<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+           <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+			{% endif %}
+        	{% endfor %}
+        </div>
+        <div class="col-xs-4">
+      	{% for i in r|slice:"8:9" %}
+				 {% if forloop.first %}
+        <img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+         <!-- <a href="{{ i.images.url }}" download>
+              <button type="button" class="btn btn-indigo btn-lg" style="float:right;">Download</button></a> -->
+        {% endif %}
+		{% endfor %}
+    </div>
+    </div>
+	  <button type="button" class="btn btn-primary btn-lg" id="bt3" style="float:right;" > Download</button>
+
+</div>
+ <div class="item">
+      	<div class="row">
+      		<div class="col-xs-4">
+      			{% for i in r|slice:"9:10" %}
+				 {% if forloop.first %}
+      			<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+      			{% endif %}
+				{% endfor %}
+        </div>
+        <div class="col-xs-4 ">
+        	{% for i in r|slice:"10:11" %}
+				 {% if forloop.first %}
+        	<img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+        	{% endif %}
+			{% endfor %}
+        </div>
+        <div class="col-xs-4">
+      	{% for i in r|slice:"11:12" %}
+				 {% if forloop.first %}
+        <img src="{{ i.images.url }}" alt="Chania" width="460" height="345">
+        {% endif %}
+		{% endfor %}
+    </div>
+    </div>
+	
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+            <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+	
+	
+	<!-- {% for i in ss %}
+	<img src="{{ i.images.url }}" alt="Images">
+	
+	{% endfor %}
+     -->
+   
+</body>
+</html>
+
+ 
+ <!-- 
+ 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Carousel</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<style type="text/css">
+</style>
+</head>
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+Indicators
+<ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+    <li data-target="#myCarousel" data-slide-to="4"></li>
+    <li data-target="#myCarousel" data-slide-to="5"></li>
+</ol>
+
+Wrapper for slides
+<div class="carousel-inner" role="listbox">
+
+    {% for p in ss|slice:":3" %}
+    {% if forloop.first %}
+    <div class="item active">
+    {% else %}
+    <div class="item">
+    {% endif %}
+        <img src="{{ p.images.url }}" alt="Image" width="460" height="345">
+  <div class="carousel-caption">
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.teaser }}</p>
+  </div>
+    </div>
+    {% endfor %}
+    </div>
+    
+
+    Left and right controls
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+</html>
+ 
+  -->
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
